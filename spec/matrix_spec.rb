@@ -26,7 +26,7 @@ end
 
 describe 'Matrix accepts a (2 x 2) grid' do
   matrix = Matrix.new('1 2\n3 4')
-  xit 'returns correct rows for a (2 x 2) grid' do
+  it 'returns correct rows for a (2 x 2) grid' do
     expect matrix.rows == [['1', '2'], ['3', '4']]
   end
 end
