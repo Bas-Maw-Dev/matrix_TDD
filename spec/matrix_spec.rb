@@ -21,5 +21,8 @@ describe Matrix do
     it 'returns correct rows for a (2 x 2) grid' do
       expect(matrix.rows).to eq([%w[1 2], %w[3 4]])
     end
+    it 'returns correct columns for a (2 x 2) grid' do
+      expect(matrix.columns).to eq([%w[1 3], %w[2 4]])
+    end
   end
 end
