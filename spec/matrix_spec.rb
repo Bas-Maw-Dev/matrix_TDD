@@ -1,32 +1,25 @@
-class Matrix
-  def initialize(string)
-    @string = string
-  end
-  def rows
-    @string
-  end
+# frozen_string_literal: true
 
-  def columns
-    @string
-  end
+require 'matrix'
 
-end
+describe Matrix do
+  describe 'Matrix accepts a (1 x 1) grid' do
+    let(:matrix) { described_class.new('1') }
 
-describe 'Matrix accepts a (1 x 1) grid' do
-  matrix = Matrix.new('1')
-  it 'returns correct rows' do
-    expect matrix.rows == [['1']]
+    it 'returns correct rows' do
+      expect(matrix.rows).to eq([['1']])
+    end
+
+    it 'returns correct columns' do
+      expect(matrix.columns).to eq([['1']])
+    end
   end
 
-  it 'returns correct columns' do
-    expect matrix.columns == [['1']]
-  end
-end
+  describe 'Matrix accepts a (2 x 2) grid' do
+    let(:matrix) { described_class.new("1 2\n3 4") }
 
-
-describe 'Matrix accepts a (2 x 2) grid' do
-  matrix = Matrix.new('1 2\n3 4')
-  it 'returns correct rows for a (2 x 2) grid' do
-    expect matrix.rows == [['1', '2'], ['3', '4']]
+    it 'returns correct rows for a (2 x 2) grid' do
+      expect(matrix.rows).to eq([%w[1 2], %w[3 4]])
+    end
   end
 end
